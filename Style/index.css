@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(32,32,32);
+    color: rgb(223,223,223);
+    margin: 0;
+    padding: 0;
+}
+
+#menu > *, #listP > *, #game, #finish {
+    margin: 16px;
+}
+
+#listP {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#finish {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(32,32,32);
+    z-index: 100;
+}
+
+#finish > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: calc(50% - 100px);
+    height: calc(50vh - 50px);
+    margin: auto;
+    border: 4px solid rgb(223,223,223);
+    border-radius: 15px;
+    padding: 16px;
+}
+
+#finish > * > * {
+    display: block;
+    width: 100%;
+}
+
+#play, #exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 8px rgb(223,223,223);
+    background-color: rgb(32,32,32);
+    border: 1px solid rgb(223,223,223);
+    color: rgb(223,223,223);
+    border-radius: 15px;
+    user-select: none;
+    margin: auto;
+    width: 100px;
+    aspect-ratio: 2 / 1;
+}
+
+#play:hover, #exit:hover {
+    background-color: rgb(64,64,64);
+    color: rgb(191,191,191);
+    box-shadow: 0px 0px 16px rgb(191,191,191);
+    border: 1px solid rgb(191,191,191);
+}

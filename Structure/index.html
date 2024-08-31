@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivors</title>
+
+    <link rel="stylesheet" href="../Style/index.css">
+    <link rel="stylesheet" href="../Style/board.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Survivors</h1>
+        <p><em>Chess variant</em></p>
+        <hr>
+        <h2>Menu</h2>
+        <label for="countP">Number of players</label>
+        <input type="number" min="1" max="100" value="1" id="countP" onchange="limit(); playerInputs()">
+        <hr>
+        <div id="listP"></div>
+        <div id="play" onclick="startGame()">Play</div>
+        <hr>
+    </div>
+    <div id="game">
+        <div class="flex-center">
+            <div id="field">
+                <div id="UP" class="bar barX" onclick="shiftIndex(board, index, 0,1, this)">^<br>|</div>
+                <div id="LEFT" class="bar barY" onclick="shiftIndex(board, index, -1,0, this)">&lt-</div>
+                <div id="board"></div>
+                <div id="RIGHT" class="bar barY" onclick="shiftIndex(board, index, 1,0, this)">-&gt</div>
+                <div id="DOWN" class="bar barX" onclick="shiftIndex(board, index, 0,-1, this)">|<br>v</div>
+            </div>
+        </div>
+
+        <div class="sector">
+            <hr>
+            <h2>Player data</h2>
+            <ul id="data">
+                <li id="name">Name: #</li>
+                <li id="index">Index: #</li>
+                <ul>
+                    <li id="indexS">Section index: #</li>
+                    <li id="indexF">Section field index: #</li>
+                </ul>
+                <li id="monsterS">Sensing monster: #</li>
+                <li id="monsterD">Monster distance (closest): #</li>
+                <br>
+                <h3>Game data</h3>
+                <li id="token">Tokens left: #</li>
+                <li id="alive">Players left: #</li>
+            </ul>
+            <hr>
+
+            <h2>Dead player list</h2>
+            <ul id="players">
+            </ul>
+            <hr>
+        </div>
+    </div>
+    <div id="finish">
+        <div id="finFrame">
+            <h2 id="state">YOU HAVE #</h2>
+            <div id="exit" onclick="menu();">EXIT</div>
+        </div>
+    </div>
+
+    <script src="../Logic/index.js"></script>
+    <script src="../Logic/player.js"></script>
+    <script src="../Logic/monster.js"></script>
+    <script src="../Logic/board.js"></script>
+</body>
+</html>
